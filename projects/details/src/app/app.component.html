@@ -1,0 +1,38 @@
+<mat-grid-list cols="3" rowHeight="140px" gutterSize="0">
+  <mat-grid-tile [colspan]="1" [rowspan]="4">
+    <div class="ingredients-wrapper">
+      <div *ngFor="let ingredient of ingredientData" class="ingredients-row">
+        <img src="https://spoonacular.com/cdn/ingredients_100x100/{{ingredient.image}}" class="ingredients-icons"
+             alt="">
+        <div class="ingredients-measures">
+          {{ingredient.amount}}
+          {{ingredient.measures.metric.unitShort}}
+          {{ingredient.name}}
+        </div>
+      </div>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile [rowspan]="4" [colspan]="2">
+    <div class="instructions-main-wrapper">
+      <div class="instructions-title-container">
+        {{instructionData.title}}
+      </div>
+      <div class="instructions-img-container">
+        <img src="{{instructionData.image}}" class="instructions-img"/>
+      </div>
+      <div class="instructions-time-container">
+        Ready in {{instructionData.readyInMinutes}} min. for {{instructionData.servings}} persons
+      </div>
+      <div class="instruction-steps-wrapper">
+        <div *ngFor="let steps of instructionSteps">
+          <div class="step-row">
+            <span class="step-number">{{steps.number}}.</span> {{steps.step}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,80 @@
+mat-expansion-panel {
+  background-color: #2b3039;
+  color: white;
+}
+
+.mat-expansion-panel-header-title {
+  color: white;
+}
+
+.mat-expansion-indicator {
+  color: white !important;
+}
+
+::ng-deep .mat-expansion-indicator::after {
+  color: white;
+}
+
+.toggle-btn {
+  color: white;
+  background: #616161;
+  margin-right: 1px;
+  border-radius: 0;
+}
+
+.mat-button-toggle-checked {
+  background: #25add4;
+}
+
+.mat-button-toggle-group {
+  height: 35px !important;
+  align-items: center;
+  border-radius: 0;
+}
+
+.mat-expansion-panel.mat-expanded {
+  overflow: auto !important;
+}
+
+.ingredient-icons {
+  max-width: 35px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+  display: flex;
+  flex-grow: 0;
+  margin-right: 16px;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 0; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #2b2b2b; /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #25add4; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 5px solid #2b2b2b; /* creates padding around scroll thumb */
+}
+
+.mat-accordion .mat-expansion-panel:not(.mat-expanded), .mat-accordion .mat-expansion-panel:not(.mat-expansion-panel-spacing) {
+  border-radius: 0;
+  margin-bottom: 3px;
+}
+.submit-ingredients-btn{
+  background-color: #46860b;
+  color: white;
+  float: right;
+  margin-top: 5px;
+}
+.submit-ingredients-btn:hover{
+  background-color: palegreen;
+  color: black;
+  font-weight: bolder;
+}

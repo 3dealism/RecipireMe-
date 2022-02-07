@@ -1,0 +1,81 @@
+.instructions-main-wrapper {
+  display: block;
+  text-align: -webkit-center;
+}
+
+.instructions-img-container {
+  margin-top: 0;
+}
+
+.instructions-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+.instructions-title-container {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: x-large;
+  font-family: Roboto, sans-serif;
+}
+
+.instructions-time-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: Roboto, sans-serif;
+  font-size: small;
+}
+
+mat-grid-list{
+  margin: 0;
+}
+
+mat-grid-tile {
+  margin: 0;
+}
+
+
+.ingredients-wrapper {
+  display: block;
+  text-align: -webkit-center;
+}
+
+.ingredients-row{
+  display: flex;
+  align-items: center;
+}
+
+.ingredients-icons {
+  display: block !important;
+  margin-top: 10px;
+  margin-right: 10px;
+  max-width: 50px;
+}
+
+.ingredients-measures {
+  margin-top: 5px;
+  font-size: medium;
+}
+
+.instruction-steps-wrapper {
+  display: block;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  text-align: start;
+}
+.step-number{
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: black;
+  color: darkorange;
+  box-shadow: 2px 2px 2px #888;
+  padding: 0 2px 0 4px;
+  margin-right: 5px;
+}
+.step-row{
+  margin-bottom: 10px;
+}

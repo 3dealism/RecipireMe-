@@ -1,0 +1,142 @@
+.search-wrapper {
+  display: flex;
+}
+
+form {
+  display: flex;
+}
+
+input[type="search"] {
+  margin: 0;
+  padding: 5px 12px;
+  color: #a1a1a1;
+  border: none;
+  box-shadow: 0 0 3px 0 #a1a1a1;
+  border-radius: 100px;
+  width: 200px;
+}
+
+input[type="search"]::placeholder {
+  color: #a1a1a1;
+}
+
+input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #a1a1a1;
+  border-color: #a1a1a1;
+  outline: none;
+  border-style: none;
+}
+
+.clear-icon {
+  display: none;
+  color: #a1a1a1;
+  cursor: pointer;
+}
+
+
+.search-wrapper input:focus + i,
+.search-wrapper input:active + i {
+  display: none;
+  outline: none;
+  border-style: none;
+}
+
+.search-wrapper input:hover + i {
+  outline: none;
+}
+
+.search-icon {
+  color: #a1a1a1;
+  margin: 5px -25px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.search-icon:hover {
+  color: black;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  margin-right: -2px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1em;
+  width: 1em;
+  border-radius: 50em;
+  background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
+  background-size: contain;
+  opacity: 0;
+  pointer-events: none;
+}
+
+input[type="search"]:focus::-webkit-search-cancel-button {
+  opacity: .3;
+  pointer-events: all;
+}
+
+input[type="search"].dark::-webkit-search-cancel-button {
+  filter: invert(1);
+}
+
+mat-grid-list {
+  margin-top: 10px;
+}
+
+mat-grid-tile {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.mat-grid-tile-content {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.recipe-wrapper {
+  display: block;
+}
+
+.img-container {
+  margin-top: 0;
+}
+
+.recipe-img {
+  display: block;
+  max-width: 350px;
+  max-height: 250px;
+  width: auto;
+  height: auto;
+}
+
+.title-container {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: larger;
+  font-family: Roboto;
+}
+
+.time-container {
+  margin-top: 5px;
+  font-family: Roboto;
+  font-size: small;
+}
+
+.viewport{
+  height: 500px;
+  width: 100%;
+  text-align: -webkit-center;
+}

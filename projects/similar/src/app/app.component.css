@@ -1,0 +1,34 @@
+.similar-recipe-wrapper {
+  display: block;
+}
+
+.similar-img-container {
+  margin-top: 0;
+}
+
+.similar-recipe-img {
+  display: block;
+  max-width: 350px;
+  max-height: 250px;
+  width: auto;
+  height: auto;
+}
+
+.similar-title-container {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: medium;
+  font-family: Roboto, sans-serif;
+}
+
+.similar-time-container {
+  margin-top: 5px;
+  font-family: Roboto, sans-serif;
+  font-size: small;
+}
+
+.similar-viewport{
+  height: 500px;
+  width: 100%;
+  text-align: -webkit-center;
+}
