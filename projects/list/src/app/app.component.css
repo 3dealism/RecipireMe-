@@ -1,5 +1,6 @@
 .search-wrapper {
   display: flex;
+  margin: 5px 0 10px 15px;
 }
 
 form {
@@ -84,11 +85,11 @@ input[type="search"].dark::-webkit-search-cancel-button {
 }
 
 mat-grid-list {
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 mat-grid-tile {
-  text-align: center;
+  text-align: -webkit-center;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -126,19 +127,89 @@ mat-grid-tile {
   margin-top: 10px;
   font-weight: bold;
   font-size: larger;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
 }
 
 .time-container {
   margin-top: 5px;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: small;
 }
 
-.viewport{
+.viewport {
   height: 100vh;
   width: 100%;
   text-align: -webkit-center;
 }
 
 
+.sideNav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.sideNav {
+  width: 75vw;
+}
+
+mat-sidenav {
+  background-color: #2d2d2d;
+  color: #969696;
+}
+
+.mat-drawer {
+  overflow: hidden;
+}
+
+.mat-drawer-content {
+  overflow: hidden;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+}
+
+#selection-app {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #2b2b2b; /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #25add4; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid #2b2b2b; /* creates padding around scroll thumb */
+}
+
+.need2buy {
+  font-size: smaller;
+}
+.buy-label{
+  font-weight: bold;
+}
+.missedIngredients {
+  display: inline;
+  text-transform: capitalize;
+}
+
+.missedIngredients:after {
+  content: ", ";
+}
+
+.missedIngredients:last-child:after {
+  content: "";
+}

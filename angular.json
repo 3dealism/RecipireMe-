@@ -125,7 +125,6 @@
               "projects/header/src/assets"
             ],
             "styles": [
-              "projects/header/src/custom-theme.scss",
               "projects/header/src/styles.css"
             ],
             "scripts": []

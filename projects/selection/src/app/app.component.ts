@@ -136,7 +136,10 @@ export class AppComponent implements OnInit {
     for (let i = 0; i < this.selectedIngredients.length; i++) {
       ingredientsStitch += this.selectedIngredients[i].name + ', ';
     }
-    const ingredients = ingredientsStitch.slice(0, ingredientsStitch.length-2);
+    const ingredients = ingredientsStitch.slice(0, ingredientsStitch.length - 2);
     console.log(ingredients);
+    const parentApp = window.parent;
+    // parentApp.frames[1].postMessage(ingredients, 'http://localhost:4202');
+    parentApp.postMessage(ingredients, 'http://localhost:4202');
   }
 }

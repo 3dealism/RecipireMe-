@@ -19,7 +19,7 @@ export class RecipeService {
   }
 
   getRecipesByIngredients(ingredients: string) {
-    const url: string = 'https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + this.apiKey3 + '&ingredients=' + ingredients;
+    const url: string = 'https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + this.apiKey2 + '&ingredients=' + ingredients;
     return this.http.get(url);
   }
 }

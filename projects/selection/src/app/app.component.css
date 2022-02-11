@@ -71,7 +71,8 @@ mat-expansion-panel {
   background-color: #46860b;
   color: white;
   float: right;
-  margin-top: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .submit-ingredients-btn:hover{
   background-color: palegreen;

@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { RecipeService } from './recipe.service';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { RecipeService } from './recipe.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     MatGridListModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    ScrollingModule
+    ScrollingModule,
+    MatSidenavModule
   ],
   providers: [RecipeService],
   bootstrap: [AppComponent]
