@@ -12,10 +12,11 @@
       </div>
     </div>
   </mat-grid-tile>
-  <mat-grid-tile [rowspan]="4" [colspan]="2">
+  <mat-grid-tile [rowspan]="4" [colspan]="2" class="rightSide">
     <div class="instructions-main-wrapper">
       <div class="instructions-title-container">
         {{instructionData.title}}
+        <button mat-raised-button class="back-btn" (click)="goBack()">Back</button>
       </div>
       <div class="instructions-img-container">
         <img src="{{instructionData.image}}" class="instructions-img"/>

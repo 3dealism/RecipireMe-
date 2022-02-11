@@ -1,8 +1,8 @@
-<mat-sidenav-container class="sideNav-container">
-  <mat-sidenav #sidenav class="sideNav" id="sideNav" mode="over" [(opened)]="isShowing">
-    <iframe src="http://localhost:4205" id="selection-app" frameBorder="0"></iframe>
-  </mat-sidenav>
-  <mat-sidenav-content class="sideNav-content">
+<!--<mat-sidenav-container class="sideNav-container">-->
+<!--  <mat-sidenav #sidenav class="sideNav" id="sideNav" mode="over" [(opened)]="isShowing">-->
+<!--    <iframe src="http://localhost:4205" id="selection-app" frameBorder="0"></iframe>-->
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content class="sideNav-content">-->
     <div class="search-wrapper">
       <form>
         <input type="search" class="search-field" name="searchText"
@@ -13,7 +13,7 @@
     <cdk-virtual-scroll-viewport #scroller [itemSize]="200" minBufferPx="1100" maxBufferPx="1500" class="viewport">
       <mat-grid-list cols="3" rowHeight="320px" gutterSize="20px">
         <mat-grid-tile *cdkVirtualFor="let recipe of recipeData | filter:filterTerm">
-          <div class="recipe-wrapper">
+          <div class="recipe-wrapper" (click)="getRecipeDetails(recipe.id)">
             <div class="img-container">
               <img src="{{recipe.image}}" class="recipe-img"/>
             </div>
@@ -36,6 +36,6 @@
         </mat-grid-tile>
       </mat-grid-list>
     </cdk-virtual-scroll-viewport>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->
 <router-outlet></router-outlet>

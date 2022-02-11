@@ -14,7 +14,7 @@ export class RecipeService {
   }
 
   getRandomRecipes() {
-    const url = 'https://api.spoonacular.com/recipes/random?apiKey=' + this.apiKey1 + '&number=90';
+    const url = 'https://api.spoonacular.com/recipes/random?apiKey=' + this.apiKey2 + '&number=90';
     return this.http.get(url);
   }
 

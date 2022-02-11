@@ -1,5 +1,5 @@
-declare const window: any;
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+// declare const window: any;
+import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {HttpClient} from "@angular/common/http";
 import {RecipeService} from './recipe.service';
@@ -14,22 +14,21 @@ export class AppComponent implements OnInit {
   recipeData: any = [];
   missedIngredients: any = [];
   filterTerm: string = '';
-  isShowing: boolean = false;
+  // isShowing: boolean = false;
   random: boolean = true;
 
-  constructor(private recipeService: RecipeService, private cd: ChangeDetectorRef) {
+  constructor(private recipeService: RecipeService) {
   }
 
   ngOnInit() {
 
     this.getRandomRecipes();
-    // this.getIngredientRecipes('rice, lemongras, shrimps');
     window.addEventListener('message', (message: any) => {
-      if (message.origin == 'http://localhost:4201') {
-        this.isShowing = !this.isShowing;
-      } else if (message.origin == 'http://localhost:4205') {
-        console.log('Got message from Selection App');
-        console.log(message.data);
+      // if (message.origin == 'http://localhost:4201') {
+      //   console.log('ListApp got message from Header App');
+      //   this.isShowing = !this.isShowing;
+      if (message.origin == 'http://localhost:4205') {
+        console.log('ListApp got message from Selection App');
         this.getIngredientRecipes(message.data);
       }
       ;
@@ -46,14 +45,19 @@ export class AppComponent implements OnInit {
     this.random = false;
     this.recipeService.getRecipesByIngredients(ingredients).subscribe((res: any) => {
       this.recipeData = res;
-      console.log(this.recipeData);
 
       res.find((res2: any) => {
         this.missedIngredients = res2.missedIngredients;
-        console.log(this.missedIngredients);
       });
     });
-    this.isShowing = !this.isShowing;
+    // this.isShowing = !this.isShowing;
+  }
+
+  getRecipeDetails(id: any){
+    console.log('Recipe Id is: '+id);
+    const parentApp = window.parent;
+    parentApp.frames[3].postMessage(id, 'http://localhost:4203');
+    parentApp.postMessage(id, 'http://localhost:4200');
   }
 }
 

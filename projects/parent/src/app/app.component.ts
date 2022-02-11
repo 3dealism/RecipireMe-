@@ -5,6 +5,47 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-    
+export class AppComponent implements OnInit {
+
+  isShowing: boolean = false;
+  // listApp: any = document.getElementById('list-app');
+  // detailsApp: any = document.getElementById('details-app');
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+    window.addEventListener('message', (message: any) => {
+      if (message.origin == 'http://localhost:4202') {
+        console.log('ParentApp got message from List App');
+        this.showDetails();
+      } else if (message.origin == 'http://localhost:4201') {
+        console.log('ParentApp got message from Header App');
+        this.isShowing = !this.isShowing;
+      } else if (message.origin == 'http://localhost:4205') {
+        console.log('ParentApp got message from Selection App');
+        this.isShowing = !this.isShowing;
+        this.showList();
+      } else if (message.origin == 'http://localhost:4203') {
+        console.log('ParentApp got message from Details App');
+        this.showList();
+      }
+    });
+  }
+
+  showDetails() {
+    const listApp: any = document.getElementById('list-app');
+    const detailsApp: any = document.getElementById('details-app');
+    listApp.style.display = 'none';
+    detailsApp.style.display = 'block';
+  }
+
+  showList() {
+    const listApp: any = document.getElementById('list-app');
+    const detailsApp: any = document.getElementById('details-app');
+    if(detailsApp.style.display !== 'none') {
+      detailsApp.style.display = 'none';
+      listApp.style.display = 'block';
+    }
+  }
 }

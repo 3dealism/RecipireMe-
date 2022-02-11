@@ -109,6 +109,7 @@ mat-grid-tile {
 
 .recipe-wrapper {
   display: block;
+  cursor: pointer;
 }
 
 .img-container {

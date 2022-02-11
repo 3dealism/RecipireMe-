@@ -1,3 +1,12 @@
-<iframe src="http://localhost:4201" id="header-app"></iframe>
-<iframe src="http://localhost:4202" id="list-app"></iframe>
+<mat-sidenav-container class="sideNav-container">
+  <mat-sidenav #sidenav class="sideNav" id="sideNav" mode="over" [(opened)]="isShowing">
+    <iframe src="http://localhost:4205" id="selection-app" frameBorder="0"></iframe>
+  </mat-sidenav>
+  <mat-sidenav-content class="sideNav-content">
+    <iframe src="http://localhost:4201" id="header-app"></iframe>
+    <iframe src="http://localhost:4202" id="list-app"></iframe>
+    <iframe src="http://localhost:4203" id="details-app"></iframe>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
 <router-outlet></router-outlet>
