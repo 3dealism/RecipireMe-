@@ -1,4 +1,3 @@
-// declare const window: any;
 import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {HttpClient} from "@angular/common/http";
@@ -10,12 +9,10 @@ import {RecipeService} from './recipe.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
+  random: boolean = true;
   recipeData: any = [];
   missedIngredients: any = [];
   filterTerm: string = '';
-  // isShowing: boolean = false;
-  random: boolean = true;
 
   constructor(private recipeService: RecipeService) {
   }
@@ -24,9 +21,6 @@ export class AppComponent implements OnInit {
 
     this.getRandomRecipes();
     window.addEventListener('message', (message: any) => {
-      // if (message.origin == 'http://localhost:4201') {
-      //   console.log('ListApp got message from Header App');
-      //   this.isShowing = !this.isShowing;
       if (message.origin == 'http://localhost:4205') {
         console.log('ListApp got message from Selection App');
         this.getIngredientRecipes(message.data);
@@ -42,7 +36,6 @@ export class AppComponent implements OnInit {
   }
 
   getIngredientRecipes(ingredients: string) {
-    this.random = false;
     this.recipeService.getRecipesByIngredients(ingredients).subscribe((res: any) => {
       this.recipeData = res;
 
@@ -50,7 +43,7 @@ export class AppComponent implements OnInit {
         this.missedIngredients = res2.missedIngredients;
       });
     });
-    // this.isShowing = !this.isShowing;
+    this.random = false;
   }
 
   getRecipeDetails(id: any){
@@ -58,6 +51,7 @@ export class AppComponent implements OnInit {
     const parentApp = window.parent;
     parentApp.frames[3].postMessage(id, 'http://localhost:4203');
     parentApp.postMessage(id, 'http://localhost:4200');
+    parentApp.frames[4].postMessage(id, 'http://localhost:4204');
   }
 }
 

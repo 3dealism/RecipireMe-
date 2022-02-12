@@ -122,6 +122,13 @@ mat-grid-tile {
   max-height: 250px;
   width: auto;
   height: auto;
+  opacity: 1;
+  transition: .2s ease;
+  backface-visibility: hidden;
+}
+
+.recipe-img:hover{
+  opacity: 0.3;
 }
 
 .title-container {
@@ -183,7 +190,7 @@ mat-sidenav {
 }
 
 *::-webkit-scrollbar {
-  width: 12px;
+  width: 0;
 }
 
 *::-webkit-scrollbar-track {

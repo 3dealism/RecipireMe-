@@ -14,12 +14,12 @@ export class RecipeService {
   }
 
   getRandomRecipes() {
-    const url = 'https://api.spoonacular.com/recipes/random?apiKey=' + this.apiKey2 + '&number=90';
+    const url = 'https://api.spoonacular.com/recipes/random?apiKey=' + this.apiKey1 + '&number=90';
     return this.http.get(url);
   }
 
   getRecipesByIngredients(ingredients: string) {
-    const url: string = 'https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + this.apiKey2 + '&ingredients=' + ingredients;
+    const url: string = 'https://api.spoonacular.com/recipes/findByIngredients?apiKey=' + this.apiKey1 + '&ingredients=' + ingredients;
     return this.http.get(url);
   }
 }

@@ -1,10 +1,9 @@
-
 * {
   scrollbar-width: 8px;/*thin;*/
   scrollbar-color: #25add4 #2b2b2b;
 }
 *::-webkit-scrollbar {
-  width: 10px;
+  width: 0;
 }
 
 *::-webkit-scrollbar-track {

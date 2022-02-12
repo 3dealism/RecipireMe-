@@ -8,8 +8,6 @@ import {Component, OnInit} from '@angular/core';
 export class AppComponent implements OnInit {
 
   isShowing: boolean = false;
-  // listApp: any = document.getElementById('list-app');
-  // detailsApp: any = document.getElementById('details-app');
 
   constructor() {
   }
@@ -36,15 +34,19 @@ export class AppComponent implements OnInit {
   showDetails() {
     const listApp: any = document.getElementById('list-app');
     const detailsApp: any = document.getElementById('details-app');
+    const similarApp: any = document.getElementById('similar-app');
     listApp.style.display = 'none';
     detailsApp.style.display = 'block';
+    similarApp.style.display = 'block';
   }
 
   showList() {
     const listApp: any = document.getElementById('list-app');
     const detailsApp: any = document.getElementById('details-app');
-    if(detailsApp.style.display !== 'none') {
+    const similarApp: any = document.getElementById('similar-app');
+    if(detailsApp.style.display !== 'none' && similarApp.style.display !== 'none') {
       detailsApp.style.display = 'none';
+      similarApp.style.display = 'none';
       listApp.style.display = 'block';
     }
   }

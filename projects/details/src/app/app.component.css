@@ -9,7 +9,7 @@
 
 .instructions-img {
   display: block;
-  max-width: 100%;
+  max-width: 400px;
   height: auto;
 }
 
@@ -108,11 +108,11 @@ mat-grid-tile {
 .back-btn{
   float: right;
   cursor: pointer;
-  background-color: #25add4;
+  background-color: paleturquoise;
   font-weight: bold;
 }
 .back-btn:hover{
-  background-color: paleturquoise;
+  background-color: #25add4;
   color: black;
 }
 
@@ -121,7 +121,7 @@ mat-grid-tile {
   scrollbar-color: #25add4 #2b2b2b;
 }
 *::-webkit-scrollbar {
-  width: 10px;
+  width: 0;
 }
 
 *::-webkit-scrollbar-track {

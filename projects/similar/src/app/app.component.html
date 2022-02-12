@@ -1,7 +1,7 @@
 <cdk-virtual-scroll-viewport #scroller [itemSize]="200" minBufferPx="1100" maxBufferPx="1500" class="similar-viewport">
-  <mat-grid-list cols="1" rowHeight="320px" gutterSize="0">
+  <mat-grid-list cols="1" rowHeight="250px" gutterSize="0">
     <mat-grid-tile *cdkVirtualFor="let recipe of similarRecipeData">
-      <div class="similar-recipe-wrapper">
+      <div class="similar-recipe-wrapper" (click)="getRecipeDetails(recipe.id)">
         <div class="similar-img-container">
           <img src="https://spoonacular.com/recipeImages/{{recipe.id}}-312x231.{{recipe.imageType}}" class="similar-recipe-img"/>
         </div>

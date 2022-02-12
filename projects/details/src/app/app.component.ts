@@ -22,6 +22,10 @@ export class AppComponent implements OnInit{
         console.log('Details App got message from List App');
         console.log(message.data);
         this.getInstructions(message.data);
+      } else if (message.origin == 'http://localhost:4204') {
+        console.log('Details App got message from Similar App');
+        console.log(message.data);
+        this.getInstructions(message.data);
       }
       ;
     });
