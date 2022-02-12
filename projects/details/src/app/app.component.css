@@ -16,7 +16,7 @@
 
 .instructions-title-container {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   font-weight: bold;
   font-size: x-large;
   font-family: Roboto, sans-serif;
@@ -24,9 +24,9 @@
 
 .instructions-time-container {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   font-family: Roboto, sans-serif;
-  font-size: small;
+  font-size: medium;
 }
 
 mat-grid-list{
@@ -88,9 +88,8 @@ mat-grid-tile {
   display: block;
   margin: 0;
   font-family: Roboto, sans-serif;
-  font-weight: bold;
   text-align: start;
-  font-size: small;
+  font-size: medium;
 }
 .step-number{
   border: 2px solid black;
@@ -99,10 +98,10 @@ mat-grid-tile {
   color: darkorange;
   box-shadow: 2px 2px 2px #888;
   padding: 0 2px 0 4px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .step-row{
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .back-btn{
