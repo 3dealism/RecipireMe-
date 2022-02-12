@@ -1,6 +1,6 @@
 .search-wrapper {
   display: flex;
-  margin: 5px 0 10px 15px;
+  margin: 5px 0 10px 50px;
 }
 
 form {
@@ -212,12 +212,15 @@ mat-sidenav {
 .missedIngredients {
   display: inline;
   text-transform: capitalize;
+  padding: 0 !important;
 }
 
-.missedIngredients:after {
+.missedIngredients:not(:last-child):after {
   content: ", ";
 }
-
-.missedIngredients:last-child:after {
-  content: "";
+li {
+  display: inline;
 }
+/*.missedIngredients:last-child:after {*/
+/*  content: "";*/
+/*}*/

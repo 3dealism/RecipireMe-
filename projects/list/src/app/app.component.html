@@ -1,8 +1,3 @@
-<!--<mat-sidenav-container class="sideNav-container">-->
-<!--  <mat-sidenav #sidenav class="sideNav" id="sideNav" mode="over" [(opened)]="isShowing">-->
-<!--    <iframe src="http://localhost:4205" id="selection-app" frameBorder="0"></iframe>-->
-<!--  </mat-sidenav>-->
-<!--  <mat-sidenav-content class="sideNav-content">-->
     <div class="search-wrapper">
       <form>
         <input type="search" class="search-field" name="searchText"
@@ -11,7 +6,7 @@
       </form>
     </div>
     <cdk-virtual-scroll-viewport #scroller [itemSize]="200" minBufferPx="1100" maxBufferPx="1500" class="viewport">
-      <mat-grid-list cols="3" rowHeight="320px" gutterSize="20px">
+      <mat-grid-list cols="3" rowHeight="350px" gutterSize="20px">
         <mat-grid-tile *cdkVirtualFor="let recipe of recipeData | filter:filterTerm">
           <div class="recipe-wrapper" (click)="getRecipeDetails(recipe.id)">
             <div class="img-container">
@@ -26,9 +21,9 @@
             <ng-template #elseBlock>
               <span class="need2buy">
                 <span class="buy-label">Need to buy: [</span>
-              <div class="missedIngredients" *ngFor="let missed of recipe.missedIngredients">
-                {{missed.name}}
-              </div>
+              <ul class="missedIngredients" *ngFor="let missed of recipe.missedIngredients">
+                <li>{{missed.name}}</li>
+              </ul>
                 <span class="buy-label">]</span>
               </span>
             </ng-template>
@@ -36,6 +31,4 @@
         </mat-grid-tile>
       </mat-grid-list>
     </cdk-virtual-scroll-viewport>
-<!--  </mat-sidenav-content>-->
-<!--</mat-sidenav-container>-->
 <router-outlet></router-outlet>
