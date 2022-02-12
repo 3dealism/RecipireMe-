@@ -12,7 +12,6 @@ export class AppComponent implements OnInit{
 
   openSelectionMF(){
     const parentApp = window.parent;
-    // parentApp.frames[1].postMessage('FromHeaderApp', 'http://localhost:4202');
     parentApp.postMessage('FromHeaderApp', 'http://localhost:4200');
   }
 }
