@@ -127,20 +127,21 @@ mat-grid-tile {
   backface-visibility: hidden;
 }
 
-.recipe-img:hover{
+.recipe-img:hover {
   opacity: 0.3;
 }
 
 .title-container {
   margin-top: 10px;
+  margin-bottom: 10px;
   font-weight: bold;
   font-size: larger;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
 }
 
 .time-container {
   margin-top: 5px;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
   font-size: small;
 }
 
@@ -204,23 +205,36 @@ mat-sidenav {
 }
 
 .need2buy {
-  font-size: smaller;
+  font-size: medium;
+  font-family: Roboto;
+  margin-top: 10px;
 }
-.buy-label{
+
+.buy-label {
+  font-size: medium;
   font-weight: bold;
+  font-family: Roboto;
 }
+
+li {
+  display: inline;
+}
+
+.boldy{
+  font-weight: bolder;
+}
+
 .missedIngredients {
+  font-family: Roboto;
   display: inline;
   text-transform: capitalize;
   padding: 0 !important;
 }
 
-.missedIngredients:not(:last-child):after {
-  content: ", ";
-}
-li {
-  display: inline;
-}
-/*.missedIngredients:last-child:after {*/
+/*.missedIngredients:not(:last-child)::after {*/
+/*  content: ", ";*/
+/*}*/
+
+/*.missedIngredients:last-child::after {*/
 /*  content: "";*/
 /*}*/

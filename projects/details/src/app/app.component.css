@@ -19,13 +19,13 @@
   margin-bottom: 15px;
   font-weight: bold;
   font-size: x-large;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
 }
 
 .instructions-time-container {
   margin-top: 10px;
   margin-bottom: 30px;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
   font-size: medium;
 }
 
@@ -82,12 +82,13 @@ mat-grid-tile {
 .ingredients-measures {
   margin-top: 5px;
   font-size: medium;
+  font-family: Roboto;
 }
 
 .instruction-steps-wrapper {
   display: block;
   margin: 0;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
   text-align: start;
   font-size: medium;
 }
@@ -109,6 +110,7 @@ mat-grid-tile {
   cursor: pointer;
   background-color: paleturquoise;
   font-weight: bold;
+  font-size: medium;
 }
 .back-btn:hover{
   background-color: #25add4;

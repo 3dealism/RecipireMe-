@@ -20,11 +20,10 @@
             </div>
             <ng-template #elseBlock>
               <span class="need2buy">
-                <span class="buy-label">Need to buy: [</span>
+                <span class="buy-label">Need to buy: </span>
               <ul class="missedIngredients" *ngFor="let missed of recipe.missedIngredients">
-                <li>{{missed.name}}</li>
+                <li><span class="boldy">|</span>{{missed.name}}<span class="boldy">|</span></li>
               </ul>
-                <span class="buy-label">]</span>
               </span>
             </ng-template>
           </div>

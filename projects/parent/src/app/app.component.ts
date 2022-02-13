@@ -16,22 +16,22 @@ export class AppComponent implements OnInit {
     window.addEventListener('message', (message: any) => {
       if (message.origin == 'http://localhost:4202') {
         console.log('ParentApp got message from List App');
-        this.showDetails();
+        this.showDetailsMFE();
       } else if (message.origin == 'http://localhost:4201') {
         console.log('ParentApp got message from Header App');
         this.isShowing = !this.isShowing;
       } else if (message.origin == 'http://localhost:4205') {
         console.log('ParentApp got message from Selection App');
         this.isShowing = !this.isShowing;
-        this.showList();
+        this.showListMFE();
       } else if (message.origin == 'http://localhost:4203') {
         console.log('ParentApp got message from Details App');
-        this.showList();
+        this.showListMFE();
       }
     });
   }
 
-  showDetails() {
+  showDetailsMFE() {
     const listApp: any = document.getElementById('list-app');
     const detailsApp: any = document.getElementById('details-app');
     const similarApp: any = document.getElementById('similar-app');
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
     similarApp.style.display = 'block';
   }
 
-  showList() {
+  showListMFE() {
     const listApp: any = document.getElementById('list-app');
     const detailsApp: any = document.getElementById('details-app');
     const similarApp: any = document.getElementById('similar-app');
