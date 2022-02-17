@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {Injector, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {createCustomElement} from '@angular/elements';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,22 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     MatSidenavModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [],
+  entryComponents: [
+    AppComponent
+  ]
 })
-export class AppModule { }
+
+export class AppModule {
+
+  constructor(private injector: Injector) {
+  }
+
+  ngDoBootstrap(){
+    const headerElement = createCustomElement(AppComponent, {
+      injector: this.injector
+    })
+
+    customElements.define('header-app', headerElement);
+  }
+}

@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {InstructionsService} from './instructions.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent implements OnInit{
   instructionData: any = [];
@@ -15,8 +16,6 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    // this.getInstructions('632593');
-
     window.addEventListener('message', (message: any) => {
       if (message.origin == 'http://localhost:4202') {
         console.log('Details App got message from List App');

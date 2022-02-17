@@ -1,11 +1,12 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {MatButtonToggleGroup} from '@angular/material/button-toggle';
 import {MatAccordion, MatExpansionPanel} from '@angular/material/expansion';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent implements OnInit {
   ingredients: any =

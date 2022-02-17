@@ -1,9 +1,10 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent implements OnInit{
 
@@ -11,7 +12,7 @@ export class AppComponent implements OnInit{
   }
 
   openSelectionMF(){
-    const parentApp = window.parent;
-    parentApp.postMessage('FromHeaderApp', 'http://localhost:4200');
+    // const parentApp = window.parent;
+    // parentApp.postMessage('FromHeaderApp', 'http://localhost:4200');
   }
 }
