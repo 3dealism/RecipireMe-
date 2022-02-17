@@ -28,7 +28,7 @@ export class AppModule {
   }
 
   ngDoBootstrap() {
-    const similarElement = createCustomElement(AppComponent, {injector: this.injector});
-    customElements.define('similar-app', similarElement);
+    const similarApp = createCustomElement(AppComponent, {injector: this.injector});
+    customElements.define('similar-app', similarApp);
   }
 }

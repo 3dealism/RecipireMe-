@@ -37,7 +37,7 @@ export class AppModule {
   }
 
   ngDoBootstrap() {
-    const listElement = createCustomElement(AppComponent, {injector: this.injector})
-    customElements.define('list-app', listElement);
+    const listApp = createCustomElement(AppComponent, {injector: this.injector})
+    customElements.define('list-app', listApp);
   }
 }

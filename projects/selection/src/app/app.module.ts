@@ -39,7 +39,7 @@ export class AppModule {
   }
 
   ngDoBootstrap() {
-    const selectionElement = createCustomElement(AppComponent, {injector: this.injector});
-    customElements.define('selection-app', selectionElement);
+    const selectionApp = createCustomElement(AppComponent, {injector: this.injector});
+    customElements.define('selection-app', selectionApp);
   }
 }

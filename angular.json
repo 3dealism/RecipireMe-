@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:build",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/parent",
             "index": "projects/parent/src/index.html",
@@ -74,7 +74,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "ngx-build-plus:build:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "parent:build:production"
@@ -86,13 +86,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "ngx-build-plus:build:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "parent:build"
           }
         },
         "test": {
-          "builder": "ngx-build-plus:build:karma",
+          "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/parent/src/test.ts",
             "polyfills": "projects/parent/src/polyfills.ts",
@@ -122,7 +122,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:build",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/header",
             "index": "projects/header/src/index.html",
@@ -181,7 +181,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "ngx-build-plus:build:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "header:build:production"
@@ -193,13 +193,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "ngx-build-plus:build:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "header:build"
           }
         },
         "test": {
-          "builder": "ngx-build-plus:build:karma",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "main": "projects/header/src/test.ts",
             "polyfills": "projects/header/src/polyfills.ts",
@@ -229,7 +229,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:build",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/list",
             "index": "projects/list/src/index.html",
@@ -244,6 +244,14 @@
               "projects/list/src/styles.css"
             ],
             "scripts": [
+              {
+                "bundleName": "polyfill-webcomp-es5",
+                "input": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"
+              },
+              {
+                "bundleName": "polyfill-webcomp",
+                "input": "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce-pf.js"
+              }
             ]
           },
           "configurations": {
@@ -280,7 +288,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "ngx-build-plus:build:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "list:build:production"
@@ -292,13 +300,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "ngx-build-plus:build:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "list:build"
           }
         },
         "test": {
-          "builder": "ngx-build-plus:build:karma",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "main": "projects/list/src/test.ts",
             "polyfills": "projects/list/src/polyfills.ts",
@@ -328,7 +336,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:build",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/selection",
             "index": "projects/selection/src/index.html",
@@ -343,6 +351,14 @@
               "projects/selection/src/styles.css"
             ],
             "scripts": [
+              {
+                "bundleName": "polyfill-webcomp-es5",
+                "input": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"
+              },
+              {
+                "bundleName": "polyfill-webcomp",
+                "input": "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce-pf.js"
+              }
             ]
           },
           "configurations": {
@@ -379,7 +395,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "ngx-build-plus:build:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "selection:build:production"
@@ -391,13 +407,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "ngx-build-plus:build:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "selection:build"
           }
         },
         "test": {
-          "builder": "ngx-build-plus:build:karma",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "main": "projects/selection/src/test.ts",
             "polyfills": "projects/selection/src/polyfills.ts",
@@ -427,7 +443,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:build",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/similar",
             "index": "projects/similar/src/index.html",
@@ -442,6 +458,14 @@
               "projects/similar/src/styles.css"
             ],
             "scripts": [
+              {
+                "bundleName": "polyfill-webcomp-es5",
+                "input": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"
+              },
+              {
+                "bundleName": "polyfill-webcomp",
+                "input": "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce-pf.js"
+              }
             ]
           },
           "configurations": {
@@ -478,7 +502,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "ngx-build-plus:build:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "similar:build:production"
@@ -490,13 +514,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "ngx-build-plus:build:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "similar:build"
           }
         },
         "test": {
-          "builder": "ngx-build-plus:build:karma",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "main": "projects/similar/src/test.ts",
             "polyfills": "projects/similar/src/polyfills.ts",
@@ -526,7 +550,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "ngx-build-plus:build",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/details",
             "index": "projects/details/src/index.html",
@@ -541,6 +565,14 @@
               "projects/details/src/styles.css"
             ],
             "scripts": [
+              {
+                "bundleName": "polyfill-webcomp-es5",
+                "input": "node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"
+              },
+              {
+                "bundleName": "polyfill-webcomp",
+                "input": "node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-sd-ce-pf.js"
+              }
             ]
           },
           "configurations": {
@@ -577,7 +609,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "ngx-build-plus:build:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "details:build:production"
@@ -589,13 +621,13 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "ngx-build-plus:build:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "details:build"
           }
         },
         "test": {
-          "builder": "ngx-build-plus:build:karma",
+          "builder": "ngx-build-plus:karma",
           "options": {
             "main": "projects/details/src/test.ts",
             "polyfills": "projects/details/src/polyfills.ts",
