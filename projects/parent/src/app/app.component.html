@@ -1,13 +1,13 @@
 <mat-sidenav-container class="sideNav-container">
   <mat-sidenav #sidenav class="sideNav" id="sideNav" mode="over" [(opened)]="isShowing">
-    <selection-app></selection-app>
+    <selection-app id="selection-app"></selection-app>
   </mat-sidenav>
   <mat-sidenav-content class="sideNav-content">
-    <header-app></header-app>
-    <list-app></list-app>
+    <header-app id="header-app"></header-app>
+    <list-app id="list-app"></list-app>
     <div class="sideBySide">
-      <details-app></details-app>
-      <similar-app></similar-app>
+      <details-app id="details-app"></details-app>
+      <similar-app id="similar-app"></similar-app>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -13,7 +13,7 @@
   backface-visibility: hidden;
   height: auto;
   display: block;
-  max-width: 90%;
+  max-width: 75%;
 }
 .similar-recipe-img:hover {
   opacity: .3;
@@ -30,6 +30,7 @@
   margin-top: 5px;
   font-family: Roboto;
   font-size: small;
+  margin-bottom: 10px !important;
 }
 
 .similar-viewport{
@@ -37,6 +38,7 @@
   width: 100%;
   text-align: -webkit-center;
 }
+
 
 ::ng-deep .mat-grid-tile-content {
   /*display: flex;*/

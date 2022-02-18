@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {HttpClient} from "@angular/common/http";
 import {RecipeService} from './recipe.service';
@@ -7,7 +7,7 @@ import {RecipeService} from './recipe.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent implements OnInit {
   random: boolean = true;
@@ -15,25 +15,19 @@ export class AppComponent implements OnInit {
   missedIngredients: any = [];
   filterTerm: string = '';
 
-  constructor(private recipeService: RecipeService) {
+  constructor(private recipeService: RecipeService, private cd: ChangeDetectorRef) {
   }
 
   ngOnInit() {
-
     this.getRandomRecipes();
-    window.addEventListener('message', (message: any) => {
-      if (message.origin == 'http://localhost:4205') {
-        console.log('ListApp got message from Selection App');
-        this.getIngredientRecipes(message.data);
-      }
-      ;
-    });
+    window.addEventListener('showIngredientRecipes', this.customEventListenerFunctionShowIngredientRecipes.bind(this), true);
   }
 
   getRandomRecipes() {
     this.recipeService.getRandomRecipes().subscribe((res: any) => {
       this.recipeData = res.recipes;
     });
+
   }
 
   getIngredientRecipes(ingredients: string) {
@@ -47,13 +41,20 @@ export class AppComponent implements OnInit {
     this.random = false;
   }
 
-  getRecipeDetails(id: any){
-    console.log('Recipe Id is: '+id);
-    const parentApp = window.parent;
-    parentApp.frames[3].postMessage(id, 'http://localhost:4203');
-    parentApp.postMessage(id, 'http://localhost:4200');
-    parentApp.frames[4].postMessage(id, 'http://localhost:4204');
+  getRecipeDetails(id: any) {
+    const data = {
+      action: id
+    };
+    const event = new CustomEvent('showDetailsMFE', {detail: data});
+    window.dispatchEvent(event);
+  }
+
+  customEventListenerFunctionShowIngredientRecipes(event: any) {
+    this.getIngredientRecipes(event.detail.action);
+    this.cd.detectChanges();
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('showIngredientRecipes', this.customEventListenerFunctionShowIngredientRecipes, true);
   }
 }
-
-

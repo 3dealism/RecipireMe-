@@ -22,7 +22,8 @@ import {routes} from './app-routing.module';
     MatToolbarModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [],
+  entryComponents: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 

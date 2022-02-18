@@ -1,7 +1,6 @@
-import {Injector, NgModule} from '@angular/core';
+import {Injector, NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {MatExpansionModule} from '@angular/material/expansion';
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -11,6 +10,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {createCustomElement} from '@angular/elements';
+import { RouterModule } from '@angular/router';
+import {routes} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import {createCustomElement} from '@angular/elements';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
+    RouterModule.forRoot(routes),
     MatExpansionModule,
     CdkAccordionModule,
     MatFormFieldModule,
@@ -31,7 +32,8 @@ import {createCustomElement} from '@angular/elements';
   ],
   providers: [],
   bootstrap: [],
-  entryComponents: [AppComponent]
+  entryComponents: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
 export class AppModule {

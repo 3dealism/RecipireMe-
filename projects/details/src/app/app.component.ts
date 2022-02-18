@@ -1,33 +1,22 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {InstructionsService} from './instructions.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent implements OnInit{
   instructionData: any = [];
   ingredientData: any = [];
   instructionSteps: any = [];
 
-  constructor(private instructionsService: InstructionsService) {
+  constructor(private instructionsService: InstructionsService, private cd:ChangeDetectorRef) {
   }
 
   ngOnInit() {
-    window.addEventListener('message', (message: any) => {
-      if (message.origin == 'http://localhost:4202') {
-        console.log('Details App got message from List App');
-        console.log(message.data);
-        this.getInstructions(message.data);
-      } else if (message.origin == 'http://localhost:4204') {
-        console.log('Details App got message from Similar App');
-        console.log(message.data);
-        this.getInstructions(message.data);
-      }
-      ;
-    });
+    window.addEventListener('showDetailsMFE', this.customEventListenerFunctionShowDetails.bind(this), true);
   }
 
   getInstructions(id: string) {
@@ -41,7 +30,16 @@ export class AppComponent implements OnInit{
   }
 
   goBack(){
-    const parentApp = window.parent;
-    parentApp.postMessage('Back from Details App', '*');
+    const event = new CustomEvent('showListMFEFromDetails', {detail: 'BackFromDetails'});
+    window.dispatchEvent(event);
+  }
+
+  customEventListenerFunctionShowDetails(event:any){
+    this.getInstructions(event.detail.action);
+    this.cd.detectChanges();
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('showDetailsMFE', this.customEventListenerFunctionShowDetails, true);
   }
 }

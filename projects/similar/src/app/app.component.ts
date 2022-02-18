@@ -1,39 +1,44 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { SimilarService } from './similar.service';
+import {ChangeDetectorRef, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {SimilarService} from './similar.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   similarRecipeData: any = [];
 
-  constructor(private similarService: SimilarService) {
+  constructor(private similarService: SimilarService, private cd: ChangeDetectorRef) {
   }
 
   ngOnInit() {
-    window.addEventListener('message', (message: any) => {
-      if (message.origin == 'http://localhost:4202') {
-        console.log('SimilarApp got message from ListApp');
-        this.getSimilarRecipes(message.data);
-      }
-      ;
-    });
+    window.addEventListener('showDetailsMFE', this.customEventListenerFunctionShowSimilarRecipes.bind(this), true);
   }
 
   getSimilarRecipes(id: any) {
-    this.similarService.getSimilarRecipes(id).
-    subscribe(res => {
+    this.similarService.getSimilarRecipes(id).subscribe(res => {
       console.log(res);
       this.similarRecipeData = res;
     });
   }
 
-  getRecipeDetails(id: any){
-    const parentApp = window.parent;
-    parentApp.frames[3].postMessage(id, 'http://localhost:4203');
+  getRecipeDetails(id: any) {
+    const data = {
+      action: id
+    };
+    const event = new CustomEvent('showDetailsMFE', {detail: data});
+    window.dispatchEvent(event);
+  }
+
+  customEventListenerFunctionShowSimilarRecipes(event: any) {
+    this.getSimilarRecipes(event.detail.action);
+    this.cd.detectChanges();
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('showDetailsMFE', this.customEventListenerFunctionShowSimilarRecipes, true);
   }
 }

@@ -6,7 +6,7 @@ import {MatAccordion, MatExpansionPanel} from '@angular/material/expansion';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent implements OnInit {
   ingredients: any =
@@ -138,8 +138,10 @@ export class AppComponent implements OnInit {
       ingredientsStitch += this.selectedIngredients[i].name + ', ';
     }
     const ingredients = ingredientsStitch.slice(0, ingredientsStitch.length - 2);
-    const parentApp = window.parent;
-    parentApp.frames[2].postMessage(ingredients, 'http://localhost:4202');
-    parentApp.postMessage(ingredients, '*');
+    const data = {
+      action: ingredients
+    };
+    const event = new CustomEvent('showIngredientRecipes', {detail: data});
+    window.dispatchEvent(event);
   }
 }

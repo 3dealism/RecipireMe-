@@ -7,17 +7,26 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
-import {HEADER_ROUTES} from './header.routes';
+import {SELECTION_ROUTES} from './selection.routes';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(HEADER_ROUTES),
+    RouterModule.forChild(SELECTION_ROUTES),
     BrowserModule,
     BrowserAnimationsModule,
-    MatIconModule,
+    MatExpansionModule,
+    CdkAccordionModule,
+    MatFormFieldModule,
+    MatButtonToggleModule, MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
-    MatToolbarModule,
   ],
   declarations: [
     AppComponent
@@ -26,5 +35,5 @@ import {HEADER_ROUTES} from './header.routes';
     AppComponent
   ]
 })
-export class HeaderModule {
+export class SelectionModule {
 }

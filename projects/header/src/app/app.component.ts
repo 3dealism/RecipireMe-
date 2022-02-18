@@ -4,7 +4,7 @@ import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@ang
   selector: 'header-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent implements OnInit{
 
@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   }
 
   openSelectionMF(){
-    // const parentApp = window.parent;
-    // parentApp.postMessage('FromHeaderApp', 'http://localhost:4200');
+    const event = new CustomEvent('openSideNav', {detail: 'SideNav opened from Header'});
+    window.dispatchEvent(event);
   }
 }
