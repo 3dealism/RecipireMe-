@@ -20,7 +20,7 @@ import {createCustomElement} from '@angular/elements';
     MatButtonModule
   ],
   providers: [InstructionsService],
-  bootstrap: [],
+  bootstrap: [AppComponent],
   entryComponents: [AppComponent]
 })
 

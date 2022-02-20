@@ -31,7 +31,7 @@ import {routes} from './app-routing.module';
 
   ],
   providers: [],
-  bootstrap: [],
+  bootstrap: [AppComponent],
   entryComponents: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -20,7 +20,7 @@ import {SimilarService} from './similar.service';
     MatGridListModule
   ],
   providers: [SimilarService],
-  bootstrap: [],
+  bootstrap: [AppComponent],
   entryComponents: [AppComponent]
 })
 export class AppModule {

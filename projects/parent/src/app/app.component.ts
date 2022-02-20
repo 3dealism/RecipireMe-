@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
 
   isShowing: boolean = false;
 
-  constructor() {
+  constructor(private cd: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
@@ -42,19 +42,23 @@ export class AppComponent implements OnInit {
 
   customEventListenerFunctionOpenSideNav(event: any) {
     this.isShowing = !this.isShowing;
+    this.cd.detectChanges();
   }
 
   customEventListenerFunctionShowListMFE(event: any) {
     this.isShowing = !this.isShowing;
     this.showListMFE();
+    this.cd.detectChanges();
   }
 
   customEventListenerFunctionShowListMFEFromDetails(event: any) {
     this.showListMFE();
+    this.cd.detectChanges();
   }
 
   customEventListenerFunctionShowDetailsMFE(event: any) {
     this.showDetailsMFE();
+    this.cd.detectChanges();
   }
 
 }

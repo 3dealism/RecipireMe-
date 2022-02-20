@@ -29,7 +29,7 @@ import {createCustomElement} from '@angular/elements';
     MatSidenavModule
   ],
   providers: [RecipeService],
-  bootstrap: [],
+  bootstrap: [AppComponent],
   entryComponents: [AppComponent]
 })
 export class AppModule {
