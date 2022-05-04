@@ -2,26 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
-## Development server
+## How to run the Web App "Recipire Me!"
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start:all` for running all Micro-Frontends and the Parent-App(Shell).
+This will open separate Browser-Tabs for each Application.
 
-## Code scaffolding
+Or run them seperately with these commands:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `ng serve parent --port 4200 --open` for running the Parent-App.
+Run `ng serve header --port 4201 --open` for running the Header-App.
+Run `ng serve list --port 4202 --open` for running the Recipes-List-App.
+Run `ng serve details --port 4203 --open` for running the Recipe-Details-App.
+Run `ng serve similar --port 4204 --open` for running the Similar-Recipes-App.
+Run `ng serve selection --port 4205 --open` for running the Ingredients-Selection-App.
