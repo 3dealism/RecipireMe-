@@ -12,6 +12,7 @@ import {RecipeService} from './recipe.service';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {createCustomElement} from '@angular/elements';
+import { ListModule } from './list.module';
 
 @NgModule({
   declarations: [
@@ -26,18 +27,18 @@ import {createCustomElement} from '@angular/elements';
     HttpClientModule,
     Ng2SearchPipeModule,
     ScrollingModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ListModule
   ],
   providers: [RecipeService],
-  bootstrap: [AppComponent],
-  entryComponents: [AppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private injector: Injector) {
-  }
-
-  ngDoBootstrap() {
-    const listApp = createCustomElement(AppComponent, {injector: this.injector})
-    customElements.define('list-app', listApp);
-  }
+  // constructor(private injector: Injector) {
+  // }
+  //
+  // ngDoBootstrap() {
+  //   const listApp = createCustomElement(AppComponent, {injector: this.injector})
+  //   customElements.define('list-app', listApp);
+  // }
 }

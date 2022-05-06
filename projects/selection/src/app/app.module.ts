@@ -1,4 +1,4 @@
-import {Injector, NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { NgModule } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {AppComponent} from './app.component';
@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {createCustomElement} from '@angular/elements';
 import { RouterModule } from '@angular/router';
 import {routes} from './app-routing.module';
+import { SelectionModule } from './selection.module';
 
 @NgModule({
   declarations: [
@@ -28,20 +29,18 @@ import {routes} from './app-routing.module';
     FormsModule,
     ReactiveFormsModule,
     MatButtonModule,
-
+    SelectionModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  bootstrap: [AppComponent]
 })
 
 export class AppModule {
-  constructor(private injector: Injector) {
-  }
-
-  ngDoBootstrap() {
-    const selectionApp = createCustomElement(AppComponent, {injector: this.injector});
-    customElements.define('selection-app', selectionApp);
-  }
+  // constructor(private injector: Injector) {
+  // }
+  //
+  // ngDoBootstrap() {
+  //   const selectionApp = createCustomElement(AppComponent, {injector: this.injector});
+  //   customElements.define('selection-app', selectionApp);
+  // }
 }

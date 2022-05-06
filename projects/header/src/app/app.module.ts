@@ -1,13 +1,14 @@
-import {Injector, NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {createCustomElement} from '@angular/elements';
 import {RouterModule} from '@angular/router';
-import {routes} from './app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
+import { HeaderModule } from './header.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,28 +16,28 @@ import {routes} from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HeaderModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  bootstrap: [AppComponent]
 })
 
 export class AppModule {
 
-  constructor(private injector: Injector) {
-  }
-
-  ngDoBootstrap() {
-    const headerApp = createCustomElement(AppComponent, {
-      injector: this.injector
-    })
-
-    customElements.define('header-app', headerApp);
-  }
+  // constructor(private injector: Injector) {
+  // }
+  //
+  // ngDoBootstrap() {
+  //   const headerApp = createCustomElement(AppComponent, {
+  //     injector: this.injector
+  //   })
+  //
+  //   customElements.define('header-app', headerApp);
+  // }
 }

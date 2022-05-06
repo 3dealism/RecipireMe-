@@ -1,15 +1,18 @@
-<mat-sidenav-container class="sideNav-container">
-  <mat-sidenav #sidenav class="sideNav" id="sideNav" mode="over" [(opened)]="isShowing">
-    <selection-app id="selection-app"></selection-app>
-  </mat-sidenav>
-  <mat-sidenav-content class="sideNav-content">
-    <header-app id="header-app"></header-app>
-    <list-app id="list-app"></list-app>
-    <div class="sideBySide">
-      <details-app id="details-app"></details-app>
-      <similar-app id="similar-app"></similar-app>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<!--<mat-sidenav-container class="sideNav-container">-->
+<!--  <mat-sidenav #sidenav class="sideNav" id="sideNav" mode="over" [(opened)]="isShowing">-->
+<!--&lt;!&ndash;    <selection-app id="selection-app"></selection-app>&ndash;&gt;-->
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content class="sideNav-content">-->
+<!--    <header-app id="header-app"></header-app>-->
+    <script src="http://localhost:4201/header.js"></script>
+    <h1 routerLink="/header">Hello!</h1>
+<h2 routerLink="/list">Hans!</h2>
+<!--    <list-app id="list-app"></list-app>-->
+<!--    <div class="sideBySide">-->
+<!--      <details-app id="details-app"></details-app>-->
+<!--      <similar-app id="similar-app"></similar-app>-->
+<!--    </div>-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->
 
 <router-outlet></router-outlet>

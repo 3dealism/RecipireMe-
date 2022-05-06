@@ -6,6 +6,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import { SimilarModule } from './similar.module';
 import {SimilarService} from './similar.service';
 
 @NgModule({
@@ -17,18 +18,18 @@ import {SimilarService} from './similar.service';
     AppRoutingModule,
     HttpClientModule,
     ScrollingModule,
-    MatGridListModule
+    MatGridListModule,
+    SimilarModule
   ],
   providers: [SimilarService],
-  bootstrap: [AppComponent],
-  entryComponents: [AppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private injector: Injector) {
-  }
-
-  ngDoBootstrap() {
-    const similarApp = createCustomElement(AppComponent, {injector: this.injector});
-    customElements.define('similar-app', similarApp);
-  }
+  // constructor(private injector: Injector) {
+  // }
+  //
+  // ngDoBootstrap() {
+  //   const similarApp = createCustomElement(AppComponent, {injector: this.injector});
+  //   customElements.define('similar-app', similarApp);
+  // }
 }

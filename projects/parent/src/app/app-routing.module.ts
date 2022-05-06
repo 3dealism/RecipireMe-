@@ -1,10 +1,56 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {loadRemoteModule} from '@angular-architects/module-federation';
+import {AppComponent} from './app.component';
 
-const routes: Routes = [];
+export const APP_ROUTES: Routes = [
+    {
+      path: 'header',
+      loadChildren: () =>
+        loadRemoteModule({
+          remoteEntry: 'http://localhost:4201/header.js',
+          type: 'module',
+          exposedModule: './Module'
+        })
+          .then(m => m.HeaderModule)
+    }, {
+      path: 'list',
+      loadChildren: () =>
+        loadRemoteModule({
+          remoteEntry: 'http://localhost:4202/list.js',
+          type: 'module',
+          exposedModule: './Module'
+        })
+          .then(m => m.ListModule)
+    }, {
+      path: 'details',
+      loadChildren: () =>
+        loadRemoteModule({
+          remoteEntry: 'http://localhost:4203/details.js',
+          type: 'module',
+          exposedModule: './Module'
+        })
+          .then(m => m.DetailsModule)
+    }, {
+      path: 'similar',
+      loadChildren: () =>
+        loadRemoteModule({
+          remoteEntry: 'http://localhost:4204/similar.js',
+          type: 'module',
+          exposedModule: './Module'
+        })
+          .then(m => m.SimilarModule)
+    }, {
+      path: 'selection',
+      loadChildren: () =>
+        loadRemoteModule({
+          remoteEntry: 'http://localhost:4205/selection.js',
+          type: 'module',
+          exposedModule: './Module'
+        })
+          .then(m => m.SelectionModule)
+    }
+  ]
+;
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+

@@ -7,18 +7,31 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
-import {HEADER_ROUTES} from './header.routes';
+import {DETAILS_ROUTES} from './details.routes';
+import { AppRoutingModule } from './app-routing.module';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(HEADER_ROUTES),
+    RouterModule.forChild(DETAILS_ROUTES),
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    BrowserModule,
+    AppRoutingModule,
+    MatGridListModule,
+    HttpClientModule,
+    MatButtonModule
+  ],
+  declarations: [
+  ],
+  entryComponents: [
+    AppComponent
   ]
 })
-export class HeaderModule {
+export class DetailsModule {
 }
