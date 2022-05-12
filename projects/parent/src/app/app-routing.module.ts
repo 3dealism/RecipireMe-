@@ -2,8 +2,10 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {loadRemoteModule} from '@angular-architects/module-federation';
 import {AppComponent} from './app.component';
+import {WebComponentWrapper, WebComponentWrapperOptions} from '@angular-architects/module-federation-tools';
 
 export const APP_ROUTES: Routes = [
+
     {
       path: 'header',
       loadChildren: () =>

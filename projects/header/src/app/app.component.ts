@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'header-app',
@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
   }
 
   openSelectionMF(){
-    // const event = new CustomEvent('openSideNav', {detail: 'SideNav opened from Header'});
-    // window.dispatchEvent(event);
+    const event = new CustomEvent('openSideNav', {detail: 'SideNav opened from Header'});
+    window.dispatchEvent(event);
   }
 }

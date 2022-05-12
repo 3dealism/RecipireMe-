@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {Injector, NgModule } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {AppComponent} from './app.component';
@@ -36,11 +36,6 @@ import { SelectionModule } from './selection.module';
 })
 
 export class AppModule {
-  // constructor(private injector: Injector) {
-  // }
-  //
-  // ngDoBootstrap() {
-  //   const selectionApp = createCustomElement(AppComponent, {injector: this.injector});
-  //   customElements.define('selection-app', selectionApp);
-  // }
+  constructor(private injector: Injector) {
+  }
 }

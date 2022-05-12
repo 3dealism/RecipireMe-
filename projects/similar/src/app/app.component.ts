@@ -5,7 +5,6 @@ import {SimilarService} from './similar.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent implements OnInit {
 
@@ -15,7 +14,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // window.addEventListener('showDetailsMFE', this.customEventListenerFunctionShowSimilarRecipes.bind(this), true);
+    window.addEventListener('showDetailsMFE', this.customEventListenerFunctionShowSimilarRecipes.bind(this), true);
   }
 
   getSimilarRecipes(id: any) {
@@ -29,16 +28,16 @@ export class AppComponent implements OnInit {
     const data = {
       action: id
     };
-    // const event = new CustomEvent('showDetailsMFE', {detail: data});
-    // window.dispatchEvent(event);
+    const event = new CustomEvent('showDetailsMFE', {detail: data});
+    window.dispatchEvent(event);
   }
 
-  // customEventListenerFunctionShowSimilarRecipes(event: any) {
-  //   this.getSimilarRecipes(event.detail.action);
-  //   this.cd.detectChanges();
-  // }
+  customEventListenerFunctionShowSimilarRecipes(event: any) {
+    this.getSimilarRecipes(event.detail.action);
+    this.cd.detectChanges();
+  }
 
-  // ngOnDestroy(): void {
-  //   window.removeEventListener('showDetailsMFE', this.customEventListenerFunctionShowSimilarRecipes, true);
-  // }
+  ngOnDestroy(): void {
+    window.removeEventListener('showDetailsMFE', this.customEventListenerFunctionShowSimilarRecipes, true);
+  }
 }

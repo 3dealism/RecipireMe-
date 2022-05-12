@@ -25,11 +25,6 @@ import {SimilarService} from './similar.service';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  // constructor(private injector: Injector) {
-  // }
-  //
-  // ngDoBootstrap() {
-  //   const similarApp = createCustomElement(AppComponent, {injector: this.injector});
-  //   customElements.define('similar-app', similarApp);
-  // }
+  constructor(private injector: Injector) {
+  }
 }

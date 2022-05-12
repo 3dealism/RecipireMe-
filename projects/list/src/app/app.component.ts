@@ -7,7 +7,6 @@ import {RecipeService} from './recipe.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent implements OnInit {
   random: boolean = true;
@@ -20,7 +19,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.getRandomRecipes();
-    // window.addEventListener('showIngredientRecipes', this.customEventListenerFunctionShowIngredientRecipes.bind(this), true);
+    window.addEventListener('showIngredientRecipes', this.customEventListenerFunctionShowIngredientRecipes.bind(this), true);
   }
 
   getRandomRecipes() {
@@ -45,16 +44,16 @@ export class AppComponent implements OnInit {
     const data = {
       action: id
     };
-    // const event = new CustomEvent('showDetailsMFE', {detail: data});
-    // window.dispatchEvent(event);
+    const event = new CustomEvent('showDetailsMFE', {detail: data});
+    window.dispatchEvent(event);
   }
 
-  // customEventListenerFunctionShowIngredientRecipes(event: any) {
-  //   this.getIngredientRecipes(event.detail.action);
-  //   this.cd.detectChanges();
-  // }
+  customEventListenerFunctionShowIngredientRecipes(event: any) {
+    this.getIngredientRecipes(event.detail.action);
+    this.cd.detectChanges();
+  }
 
-  // ngOnDestroy(): void {
-  //   window.removeEventListener('showIngredientRecipes', this.customEventListenerFunctionShowIngredientRecipes, true);
-  // }
+  ngOnDestroy(): void {
+    window.removeEventListener('showIngredientRecipes', this.customEventListenerFunctionShowIngredientRecipes, true);
+  }
 }

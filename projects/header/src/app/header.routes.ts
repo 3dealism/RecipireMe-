@@ -7,5 +7,5 @@ export const HEADER_ROUTES: Routes = [
     path: '',
     component: AppComponent
   },
-  // { path: '**', redirectTo: '', pathMatch: 'full' }
+  // { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];

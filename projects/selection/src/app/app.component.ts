@@ -141,7 +141,7 @@ export class AppComponent implements OnInit {
     const data = {
       action: ingredients
     };
-    // const event = new CustomEvent('showIngredientRecipes', {detail: data});
-    // window.dispatchEvent(event);
+    const event = new CustomEvent('showIngredientRecipes', {detail: data});
+    window.dispatchEvent(event);
   }
 }

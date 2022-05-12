@@ -34,11 +34,8 @@ import { ListModule } from './list.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  // constructor(private injector: Injector) {
-  // }
-  //
-  // ngDoBootstrap() {
-  //   const listApp = createCustomElement(AppComponent, {injector: this.injector})
-  //   customElements.define('list-app', listApp);
-  // }
+  constructor(private injector: Injector) {
+  }
+
+
 }
