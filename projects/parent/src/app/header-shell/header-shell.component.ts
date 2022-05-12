@@ -25,18 +25,11 @@ export class HeaderShellComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.viewContainer.clear();
-
-    // const Component = await loadRemoteModule(this.options)
-    //   .then(m => m[this.options.componentName]);
-    //
-    // const compRef = this.viewContainer.createComponent(Component);
-
     const {HeaderComponent} = await loadRemoteModule({
       remoteEntry: 'http://localhost:4201/header.js',
       type: 'module',
-      exposedModule: './Module',
+      exposedModule: './AppComponent',
     });
-    const componentRef: ComponentRef<any> = this.vcref.createComponent(HeaderComponent);
+    this.vcref.createComponent(HeaderComponent);
   }
 }

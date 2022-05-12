@@ -31,7 +31,8 @@ module.exports = {
       name: "header",
       filename: "header.js",
       exposes: {
-        './Module': './projects/header/src/app/header.module.ts'
+        './Module': './projects/header/src/app/header.module.ts',
+        // './AppComponent': './projects/header/src/app/app.component.ts'
       },
 
       shared: share({
