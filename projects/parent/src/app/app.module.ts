@@ -8,12 +8,12 @@ import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { HeaderShellComponent } from './header-shell/header-shell.component';
-
+import { WrapperComponent } from './wrapper/wrapper.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, HeaderShellComponent
+    AppComponent, HeaderShellComponent, WrapperComponent
   ],
   imports: [
     BrowserModule,

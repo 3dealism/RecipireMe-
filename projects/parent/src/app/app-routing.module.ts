@@ -7,6 +7,17 @@ import {WebComponentWrapper, WebComponentWrapperOptions} from '@angular-architec
 export const APP_ROUTES: Routes = [
 
     {
+      path: '',
+      component: WebComponentWrapper,
+      data: {
+        remoteEntry: 'http://localhost:4201/header.js',
+        type: 'module',
+        exposedModule: './web-components',
+        importName: 'header',
+        elementName: 'header-app'
+      } as WebComponentWrapperOptions
+    },
+    {
       path: 'header',
       loadChildren: () =>
         loadRemoteModule({
