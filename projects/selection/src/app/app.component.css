@@ -30,6 +30,7 @@ mat-expansion-panel {
   height: 35px !important;
   align-items: center;
   border-radius: 0;
+  border: none;
 }
 
 .mat-expansion-panel.mat-expanded {
