@@ -30,7 +30,8 @@ module.exports = {
       name: "details",
       filename: "details.js",
       exposes: {
-        './Module': './projects/details/src/app/details.module.ts',
+        // './Module': './projects/details/src/app/details.module.ts',
+        './web-components': './projects/details/src/bootstrap.ts'
       },
 
       shared: share({

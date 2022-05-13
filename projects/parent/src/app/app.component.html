@@ -1,18 +1,16 @@
-<!--<mat-sidenav-container class="sideNav-container">-->
-<!--  <mat-sidenav #sidenav class="sideNav" id="sideNav" mode="over" [(opened)]="isShowing">-->
-<!--    <selection-app id="selection-app"></selection-app>-->
-<!--  </mat-sidenav>-->
-<!--  <mat-sidenav-content class="sideNav-content">-->
-<!--    <header-app id="header-app"></header-app>-->
-<!--    <list-app id="list-app"></list-app>-->
-<!--    <div class="sideBySide">-->
-<!--      <details-app id="details-app"></details-app>-->
-<!--      <similar-app id="similar-app"></similar-app>-->
-<!--    </div>-->
-<!--  </mat-sidenav-content>-->
-<!--</mat-sidenav-container>-->
-<!--<h1>Hello</h1>-->
-<!--<header-app></header-app>-->
+<mat-sidenav-container class="sideNav-container">
+  <mat-sidenav #sidenav class="sideNav" id="sideNav" mode="over" [(opened)]="isShowing">
+    <selection-app id="selection-app"></selection-app>
+  </mat-sidenav>
+  <mat-sidenav-content #headerList class="sideNav-content">
+    <header-app id="header-app"></header-app>
+    <list-app id="list-app"></list-app>
+    <div class="sideBySide">
+      <details-app id="details-app"></details-app>
+      <similar-app id="similar-app"></similar-app>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 <router-outlet></router-outlet>
 
 

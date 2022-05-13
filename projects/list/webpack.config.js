@@ -31,7 +31,8 @@ module.exports = {
       name: "list",
       filename: "list.js",
       exposes: {
-        './Module': './projects/list/src/app/list.module.ts'
+        // './Module': './projects/list/src/app/list.module.ts'
+        './web-components': './projects/list/src/bootstrap.ts'
       },
 
       shared: share({

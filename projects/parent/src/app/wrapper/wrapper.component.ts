@@ -24,11 +24,11 @@ export class WrapperComponent implements AfterContentInit {
       .then((_: any) => console.debug(`element ${elementName} loaded!`))
       .catch((err: any) => console.error(`error loading ${elementName}:`, err));
 
-    // const element = document.createElement(elementName);
-    // this.vc.nativeElement.appendChild(element);
-    const element = document.createElement('header-app');
-    document.body.appendChild(element);
-    await registry.header();
+    const element = document.createElement(elementName);
+    this.vc.nativeElement.appendChild(element);
+    // const element = document.createElement('header-app');
+    // document.body.appendChild(element);
+    // await registry.header();
   }
 
 }

@@ -6,17 +6,28 @@ import {WebComponentWrapper, WebComponentWrapperOptions} from '@angular-architec
 
 export const APP_ROUTES: Routes = [
 
-    {
-      path: '',
-      component: WebComponentWrapper,
-      data: {
-        remoteEntry: 'http://localhost:4201/header.js',
-        type: 'module',
-        exposedModule: './web-components',
-        importName: 'header',
-        elementName: 'header-app'
-      } as WebComponentWrapperOptions
-    },
+    // {
+    //   path: '',
+    //   component: WebComponentWrapper,
+    //   data: {
+    //     remoteEntry: 'http://localhost:4201/header.js',
+    //     type: 'module',
+    //     exposedModule: './web-components',
+    //     importName: 'header',
+    //     elementName: 'header-app'
+    //   } as WebComponentWrapperOptions
+    // },
+    // {
+    //   path: '',
+    //   component: WebComponentWrapper,
+    //   data: {
+    //     remoteEntry: 'http://localhost:4202/list.js',
+    //     type: 'module',
+    //     exposedModule: './web-components',
+    //     importName: 'list',
+    //     elementName: 'list-app'
+    //   } as WebComponentWrapperOptions
+    // },
     {
       path: 'header',
       loadChildren: () =>

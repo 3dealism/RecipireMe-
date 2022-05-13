@@ -31,11 +31,14 @@ import { ListModule } from './list.module';
     ListModule
   ],
   providers: [RecipeService],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule {
   constructor(private injector: Injector) {
   }
 
-
+  ngDoBootstrap() {
+    const listApp = createCustomElement(AppComponent, {injector: this.injector});
+    customElements.define('list-app', listApp);
+  }
 }

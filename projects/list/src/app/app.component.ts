@@ -4,7 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {RecipeService} from './recipe.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'list-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

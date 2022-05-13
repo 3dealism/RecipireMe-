@@ -22,17 +22,17 @@ import {createCustomElement} from '@angular/elements';
     DetailsModule
   ],
   providers: [InstructionsService],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 
 export class AppModule {
   constructor(private injector: Injector) {
   }
 
-  // ngDoBootstrap() {
-  //   const detailsApp = createCustomElement(AppComponent, {
-  //     injector: this.injector
-  //   })
-  //   customElements.define('details-app', detailsApp);
-  // }
+  ngDoBootstrap() {
+    const detailsApp = createCustomElement(AppComponent, {
+      injector: this.injector
+    })
+    customElements.define('details-app', detailsApp);
+  }
 }

@@ -14,7 +14,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
@@ -33,11 +32,6 @@ import { AppRoutingModule } from './app-routing.module';
     Ng2SearchPipeModule,
     ScrollingModule,
     MatSidenavModule
-  ],
-  declarations: [
-  ],
-  entryComponents: [
-    AppComponent
   ]
 })
 export class ListModule {
