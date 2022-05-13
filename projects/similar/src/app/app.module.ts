@@ -22,9 +22,13 @@ import {SimilarService} from './similar.service';
     SimilarModule
   ],
   providers: [SimilarService],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule {
   constructor(private injector: Injector) {
+  }
+  ngDoBootstrap() {
+    const similarApp = createCustomElement(AppComponent, {injector: this.injector});
+    customElements.define('similar-app', similarApp);
   }
 }

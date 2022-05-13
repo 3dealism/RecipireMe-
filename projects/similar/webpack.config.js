@@ -30,7 +30,8 @@ module.exports = {
       name: "similar",
       filename: "similar.js",
       exposes: {
-        './Module': './projects/similar/src/app/similar.module.ts',
+        // './Module': './projects/similar/src/app/similar.module.ts',
+        './web-components': './projects/similar/src/bootstrap.ts'
       },
 
       shared: share({

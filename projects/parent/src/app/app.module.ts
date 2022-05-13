@@ -7,12 +7,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import { WrapperComponent } from './wrapper/wrapper.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, WrapperComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,9 @@ import {
   ComponentRef,
   ElementRef,
   OnInit,
+  QueryList,
   ViewChild,
+  ViewChildren,
   ViewContainerRef
 } from '@angular/core';
 import {Router} from "@angular/router";
@@ -24,8 +26,6 @@ import {registry} from './registry';
 })
 export class AppComponent implements OnInit, AfterContentInit {
 
-  @ViewChild('headerList', {read: ElementRef, static: true})
-  headerList!: ElementRef;
   isShowing: boolean = false;
 
   constructor(private cd: ChangeDetectorRef, private router: Router) {
@@ -41,13 +41,11 @@ export class AppComponent implements OnInit, AfterContentInit {
   }
 
   async ngAfterContentInit(): Promise<void> {
-    const headerApp = document.createElement('header-app');
-    headerApp.setAttribute("id", "header-app");
-    const listApp = document.createElement('list-app');
-    listApp.setAttribute("id", "list-app");
-    this.headerList.nativeElement.appendChild(headerApp, listApp);
     await registry.header();
     await registry.list();
+    await registry.selection();
+    await registry.details();
+    await registry.similar();
   }
 
   showDetailsMFE() {

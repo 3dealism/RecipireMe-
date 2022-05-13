@@ -2,7 +2,7 @@ import {ChangeDetectorRef, Component, OnInit, ViewEncapsulation} from '@angular/
 import {SimilarService} from './similar.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'similar-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

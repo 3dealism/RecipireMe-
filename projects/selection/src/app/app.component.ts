@@ -3,7 +3,7 @@ import {MatButtonToggleGroup} from '@angular/material/button-toggle';
 import {MatAccordion, MatExpansionPanel} from '@angular/material/expansion';
 
 @Component({
-  selector: 'app-root',
+  selector: 'selection-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   encapsulation: ViewEncapsulation.Emulated

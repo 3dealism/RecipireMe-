@@ -2,7 +2,7 @@ import {ChangeDetectorRef, Component, OnInit, ViewEncapsulation} from '@angular/
 import {InstructionsService} from './instructions.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'details-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    // window.addEventListener('showDetailsMFE', this.customEventListenerFunctionShowDetails.bind(this), true);
+    window.addEventListener('showDetailsMFE', this.customEventListenerFunctionShowDetails.bind(this), true);
   }
 
   getInstructions(id: string) {
@@ -29,16 +29,16 @@ export class AppComponent implements OnInit{
   }
 
   goBack(){
-    // const event = new CustomEvent('showListMFEFromDetails', {detail: 'BackFromDetails'});
-    // window.dispatchEvent(event);
+    const event = new CustomEvent('showListMFEFromDetails', {detail: 'BackFromDetails'});
+    window.dispatchEvent(event);
   }
 
-  // customEventListenerFunctionShowDetails(event:any){
-  //   this.getInstructions(event.detail.action);
-  //   this.cd.detectChanges();
-  // }
+  customEventListenerFunctionShowDetails(event:any){
+    this.getInstructions(event.detail.action);
+    this.cd.detectChanges();
+  }
 
-  // ngOnDestroy(): void {
-  //   window.removeEventListener('showDetailsMFE', this.customEventListenerFunctionShowDetails, true);
-  // }
+  ngOnDestroy(): void {
+    window.removeEventListener('showDetailsMFE', this.customEventListenerFunctionShowDetails, true);
+  }
 }

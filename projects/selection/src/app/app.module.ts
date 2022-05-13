@@ -32,10 +32,14 @@ import { SelectionModule } from './selection.module';
     SelectionModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 
 export class AppModule {
   constructor(private injector: Injector) {
+  }
+  ngDoBootstrap() {
+    const selectionApp = createCustomElement(AppComponent, {injector: this.injector});
+    customElements.define('selection-app', selectionApp);
   }
 }

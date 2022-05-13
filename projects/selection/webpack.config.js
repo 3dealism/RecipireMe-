@@ -30,7 +30,8 @@ module.exports = {
       name: "selection",
       filename: "selection.js",
       exposes: {
-        './Module': './projects/selection/src/app/selection.module.ts',
+        // './Module': './projects/selection/src/app/selection.module.ts',
+        './web-components': './projects/selection/src/bootstrap.ts'
       },
 
 
