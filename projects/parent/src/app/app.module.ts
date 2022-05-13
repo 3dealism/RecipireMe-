@@ -8,7 +8,6 @@ import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent

@@ -1,22 +1,13 @@
 import {loadRemoteModule} from '@angular-architects/module-federation';
 import {
   AfterContentInit,
-  AfterViewInit,
   ChangeDetectorRef,
   Component,
-  ComponentFactory,
-  ComponentFactoryResolver,
-  ComponentRef,
-  ElementRef,
   OnInit,
-  QueryList,
   ViewChild,
-  ViewChildren,
   ViewContainerRef
 } from '@angular/core';
 import {Router} from "@angular/router";
-import {LookupService} from './plugins/lookup.service';
-import {PluginOptions} from './plugins/plugin';
 import {registry} from './registry';
 
 @Component({
