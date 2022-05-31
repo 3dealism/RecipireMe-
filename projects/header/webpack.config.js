@@ -12,7 +12,6 @@ module.exports = {
   output: {
     uniqueName: "header",
     publicPath: "http://localhost:4201/",
-    // scriptType: 'text/javascript'
   },
   optimization: {
     runtimeChunk: false
@@ -34,7 +33,6 @@ module.exports = {
         // './Module': './projects/header/src/app/header.module.ts',
         './web-components': './projects/header/src/bootstrap.ts'
       },
-
       shared: share({
         "@angular/core": {singleton: true, strictVersion: true, requiredVersion: 'auto'},
         "@angular/common": {singleton: true, strictVersion: true, requiredVersion: 'auto'},

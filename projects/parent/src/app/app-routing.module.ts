@@ -5,7 +5,6 @@ import {AppComponent} from './app.component';
 import {WebComponentWrapper, WebComponentWrapperOptions} from '@angular-architects/module-federation-tools';
 
 export const APP_ROUTES: Routes = [
-
     {
       path: 'header',
       loadChildren: () =>
