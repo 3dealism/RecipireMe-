@@ -4,6 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:all": "npm run start:parent | npm run start:header | npm run start:list | npm run start:details | npm run start:similar | npm run start:selection | npm run start:selection",
+    "start:header": "ng serve header --port 4201 --open",
+    "start:list": "ng serve list --port 4202 --open",
+    "start:details": "ng serve details --port 4203 --open",
+    "start:similar": "ng serve similar --port 4204 --open",
+    "start:selection": "ng serve selection --port 4205 --open",
+    "start:parent": "ng serve parent --port 4200 --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
